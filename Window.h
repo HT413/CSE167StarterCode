@@ -3,13 +3,9 @@
 
 #include <iostream>
 
-#ifdef __APPLE__
-// If modern OpenGL replace gl.h with gl3.h
-#include <OpenGL/gl.h>
-#include <OpenGL/glext.h>
-#else
 #include <GL/glew.h>
-#endif
+#include <OpenGL/gl3.h>
+#include <OpenGL/glext.h>
 
 #include <GLFW/glfw3.h>
 #include "Cube.h"
