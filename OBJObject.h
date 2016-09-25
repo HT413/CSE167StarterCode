@@ -1,13 +1,12 @@
-#ifndef OBJOBJECT_H
-#define OBJOBJECT_H
+#pragma once
 
+#include <GL/glew.h>
 #ifdef __APPLE__
 #include <OpenGL/gl3.h>
-#include <OpenGL/glext.h>
-#include <OpenGL/gl.h> // Remove this line in future projects
 #else
-#include <GL/glew.h>
-#endif
+#include <OpenGL/gl.h>
+#endif /* __APPLE__ */
+#include <OpenGL/glext.h>
 
 #include <GLFW/glfw3.h>
 #include <glm/mat4x4.hpp>
@@ -28,5 +27,3 @@ public:
 	void parse(const char* filepath);
 	void draw();
 };
-
-#endif

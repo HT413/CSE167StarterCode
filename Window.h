@@ -1,15 +1,14 @@
-#ifndef _WINDOW_H_
-#define _WINDOW_H_
+#pragma once
 
 #include <iostream>
 
-#ifdef __APPLE__
-// If modern OpenGL replace gl.h with gl3.h
-#include <OpenGL/gl.h>
-#include <OpenGL/glext.h>
-#else
 #include <GL/glew.h>
-#endif
+#ifdef __APPLE__
+#include <OpenGL/gl3.h>
+#else
+#include <OpenGL/gl.h>
+#endif /* __APPLE__ */
+#include <OpenGL/glext.h>
 
 #include <GLFW/glfw3.h>
 #include "Cube.h"
@@ -27,5 +26,3 @@ public:
 	static void display_callback(GLFWwindow*);
 	static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 };
-
-#endif

@@ -1,16 +1,14 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#pragma once
 
-#ifdef __APPLE__
-// If modern OpenGL replace gl.h with gl3.h
-#include <OpenGL/gl.h>
-#include <OpenGL/glext.h>
-#else
 #include <GL/glew.h>
-#endif
+#ifdef __APPLE__
+#include <OpenGL/gl3.h>
+#else
+#include <OpenGL/gl.h>
+#endif /* __APPLE__ */
+#include <OpenGL/glext.h>
+
 #include <GLFW/glfw3.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "Window.h"
-
-#endif
