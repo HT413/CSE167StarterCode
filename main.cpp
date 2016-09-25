@@ -1,14 +1,12 @@
 #include "main.h"
 
-GLFWwindow* window;
-
 void error_callback(int error, const char* description)
 {
 	// Print error
 	fputs(description, stderr);
 }
 
-void setup_callbacks()
+void setup_callbacks(GLFWwindow* window)
 {
 	// Set the error callback
 	glfwSetErrorCallback(error_callback);
@@ -57,16 +55,16 @@ void setup_opengl_settings()
 	// Disable backface culling to render both sides of polygons
 	glDisable(GL_CULL_FACE);
 	// Set clear color to black
-	glClearColor(0.0, 0.0, 0.0, 0.0);                           
+	glClearColor(0.0, 0.0, 0.0, 0.0);
 	// Set shading to smooth
-	glShadeModel(GL_SMOOTH);                                    
+	glShadeModel(GL_SMOOTH);
 	// Auto normalize surface normals
 	glEnable(GL_NORMALIZE);
-	
+
 	// Setup materials
 	setup_materials();
 	// Setup lighting
-	setup_lighting();                                           
+	setup_lighting();
 }
 
 void print_versions()
@@ -84,11 +82,11 @@ void print_versions()
 int main(void)
 {
 	// Create the GLFW window
-	window = Window::create_window(640, 480);
+	GLFWwindow* window = Window::create_window(640, 480);
 	// Print OpenGL and GLSL versions
 	print_versions();
 	// Setup callbacks
-	setup_callbacks();
+	setup_callbacks(window);
 	// Setup OpenGL settings, including lighting, materials, etc.
 	setup_opengl_settings();
 	// Initialize objects/pointers for rendering
