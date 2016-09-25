@@ -1,5 +1,4 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#pragma once
 
 #include <GL/glew.h>
 #include <OpenGL/gl3.h>
@@ -9,5 +8,3 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Window.h"
-
-#endif

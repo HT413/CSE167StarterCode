@@ -1,5 +1,4 @@
-#ifndef _CUBE_H_
-#define _CUBE_H_
+#pragma once
 
 #include <GL/glew.h>
 #include <OpenGL/gl3.h>
@@ -26,6 +25,3 @@ public:
 
 	void spin(float);
 };
-
-#endif
-

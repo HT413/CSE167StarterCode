@@ -1,7 +1,5 @@
-#ifndef OBJOBJECT_H
-#define OBJOBJECT_H
+#pragma once
 
-#ifdef __APPLE__
 #include <OpenGL/gl3.h>
 #include <OpenGL/glext.h>
 #include <OpenGL/gl.h> // Remove this line in future projects
@@ -28,5 +26,3 @@ public:
 	void parse(const char* filepath);
 	void draw();
 };
-
-#endif

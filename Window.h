@@ -1,5 +1,4 @@
-#ifndef _WINDOW_H_
-#define _WINDOW_H_
+#pragma once
 
 #include <iostream>
 
@@ -23,5 +22,3 @@ public:
 	static void display_callback(GLFWwindow*);
 	static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 };
-
-#endif
