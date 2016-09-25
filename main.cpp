@@ -13,7 +13,7 @@ void setup_callbacks(GLFWwindow* window)
 	// Set the key callback
 	glfwSetKeyCallback(window, Window::key_callback);
 	// Set the window resize callback
-	glfwSetWindowSizeCallback(window, Window::resize_callback);
+	glfwSetFramebufferSizeCallback(window, Window::resize_callback);
 }
 
 void setup_materials()

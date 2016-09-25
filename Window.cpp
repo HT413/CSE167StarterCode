@@ -44,7 +44,9 @@ GLFWwindow* Window::create_window(int width, int height)
 	glfwSwapInterval(1);
 
 	// Call the resize callback to make sure things get drawn immediately
-	Window::resize_callback(window, width, height);
+	int fwidth, fheight;
+	glfwGetFramebufferSize(window, &fwidth, &fheight);
+	Window::resize_callback(window, fwidth, fheight);
 
 	return window;
 }
@@ -79,7 +81,7 @@ void Window::display_callback(GLFWwindow* window)
 	glMatrixMode(GL_MODELVIEW);
 	// Load the identity matrix
 	glLoadIdentity();
-	
+
 	// Render objects
 	cube.draw();
 
