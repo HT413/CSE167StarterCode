@@ -86,14 +86,14 @@ void displayCallback(GLFWwindow* window)
 void errorCallback(int error, const char* description)
 {
 	// Print error
-	fputs(description, stderr);
+	std::cerr << description << std::endl;
 }
 
 int main(int argc, char** argv) {
 	// Initialize GLFW
 	if (!glfwInit())
 	{
-		fprintf(stderr, "Failed to initialize GLFW\n");
+		std::cerr << "Failed to initialize GLFW" << std::endl;
 		return -1;
 	}
 
@@ -101,12 +101,12 @@ int main(int argc, char** argv) {
 	glfwWindowHint(GLFW_SAMPLES, 4);
 
 	// Create the GLFW window
-	GLFWwindow* window = glfwCreateWindow(window_height, window_height, "Rastizer", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(window_height, window_height, "Rastizer", nullptr, nullptr);
 
 	// Check if the window could not be created
 	if (!window)
 	{
-		fprintf(stderr, "Failed to open GLFW window.\n");
+		std::cerr << "Failed to open GLFW window." << std::endl;
 		glfwTerminate();
 		return -1;
 	}

@@ -1,6 +1,9 @@
 #include "Window.h"
 
-const char* window_title = "GLFW Starter Project";
+#include <string>
+#include <iostream>
+
+const std::string window_title = "GLFW Starter Project";
 Cube cube(5.0f);
 
 int Window::width;
@@ -19,22 +22,22 @@ GLFWwindow* Window::create_window(int width, int height)
 	// Initialize GLFW.
 	if (!glfwInit())
 	{
-		fprintf(stderr, "Failed to initialize GLFW\n");
-		return NULL;
+		std::cerr << "Failed to initialize GLFW" << std::endl;
+		return nullptr;
 	}
 
 	// 4x antialiasing
 	glfwWindowHint(GLFW_SAMPLES, 4);
 
 	// Create the GLFW window
-	GLFWwindow* window = glfwCreateWindow(width, height, window_title, NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(width, height, window_title.c_str(), nullptr, nullptr);
 
 	// Check if the window could not be created
 	if (!window)
 	{
-		fprintf(stderr, "Failed to open GLFW window.\n");
+		std::cerr << "Failed to open GLFW window" << std::endl;
 		glfwTerminate();
-		return NULL;
+		return nullptr;
 	}
 
 	// Make the context of the window
@@ -44,7 +47,9 @@ GLFWwindow* Window::create_window(int width, int height)
 	glfwSwapInterval(1);
 
 	// Call the resize callback to make sure things get drawn immediately
-	Window::resize_callback(window, width, height);
+	int fwidth, fheight;
+	glfwGetFramebufferSize(window, &fwidth, &fheight);
+	Window::resize_callback(window, fwidth, fheight);
 
 	return window;
 }
@@ -79,7 +84,7 @@ void Window::display_callback(GLFWwindow* window)
 	glMatrixMode(GL_MODELVIEW);
 	// Load the identity matrix
 	glLoadIdentity();
-	
+
 	// Render objects
 	cube.draw();
 

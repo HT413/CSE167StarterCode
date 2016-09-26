@@ -1,15 +1,7 @@
-#ifndef _CUBE_H_
-#define _CUBE_H_
+#pragma once
 
-#ifdef __APPLE__
-// If modern OpenGL replace gl.h with gl3.h
-#include <OpenGL/gl.h>
-#include <OpenGL/glext.h>
-#else
-#include <GL/glew.h>
-#endif
+#include "gl-inl.h"
 
-#include <GLFW/glfw3.h>
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -29,6 +21,3 @@ public:
 
 	void spin(float);
 };
-
-#endif
-

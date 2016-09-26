@@ -1,18 +1,18 @@
 #include "OBJObject.h"
 
-OBJObject::OBJObject(const char *filepath) 
+OBJObject::OBJObject(std::string const& filepath)
 {
 	toWorld = glm::mat4(1.0f);
 	parse(filepath);
 }
 
-void OBJObject::parse(const char *filepath) 
+void OBJObject::parse(std::string const& filepath)
 {
 	//TODO parse the OBJ file
 	// Populate the face indices, vertices, and normals vectors with the OBJ Object data
 }
 
-void OBJObject::draw() 
+void OBJObject::draw()
 {
 	glMatrixMode(GL_MODELVIEW);
 
@@ -22,7 +22,7 @@ void OBJObject::draw()
 
 	glBegin(GL_POINTS);
 	// Loop through all the vertices of this OBJ Object and render them
-	for (unsigned int i = 0; i < vertices.size(); ++i) 
+	for (unsigned int i = 0; i < vertices.size(); ++i)
 	{
 		glVertex3f(vertices[i].x, vertices[i].y, vertices[i].z);
 	}
