@@ -1,12 +1,20 @@
-CFLAGS = -g -DGL_GLEXT_PROTOTYPES -DGL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED -DOSX
+CFLAGS = -g --std=c++14 -DGL_GLEXT_PROTOTYPES -DGL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED
 GLCCFLAGS := `pkg-config --cflags glfw3 glm glew`
 GLLDFLAGS := `pkg-config --libs glfw3 glm glew`
 INCFLAGS = -I/usr/X11/include $(GLCCFLAGS)
-LDFLAGS = -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo \
-		-L"/System/Library/Frameworks/OpenGL.framework/Libraries" \
-		-lGL -lstdc++ $(GLLDFLAGS)
+LDFLAGS = -lGL -lstdc++ $(GLLDFLAGS)
 
 RM = /bin/rm -f
+
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+endif
+ifeq ($(UNAME_S),Darwin)
+	LDFLAGS += \
+		-framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo \
+		-L"/System/Library/Frameworks/OpenGL.framework/Libraries"
+endif
+
 
 .PHONY: all
 all: glfwStarterProjectBin
