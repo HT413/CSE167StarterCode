@@ -11,13 +11,15 @@ RM = /bin/rm -f
 .PHONY: all
 all: glfwStarterProjectBin
 
-glfwStarterProjectBin: main.o Window.o Cube.o
+glfwStarterProjectBin: main.o Window.o Cube.o OBJObject.o
 	$(CC) $(CFLAGS) -o glfwStarterProjectBin main.o Window.o Cube.o $(INCFLAGS) $(LDFLAGS)
-main.o: Window.o main.cpp main.h
+main.o: Window.o main.cpp gl-inl.h
 	$(CC) $(CFLAGS) $(INCFLAGS) -c main.cpp
-Window.o: Cube.o Window.cpp Window.h
+Window.o: Cube.o Window.cpp Window.h gl-inl.h
 	$(CC) $(CFLAGS) $(INCFLAGS) -c Window.cpp
-Cube.o: Cube.cpp Cube.h
+Cube.o: Cube.cpp Cube.h gl-inl.h
 	$(CC) $(CFLAGS) $(INCFLAGS) -c Cube.cpp
+OBJObject.o: OBJObject.h gl-inl.h
+	$(CC) $(CFLAGS) $(INCFLAGS) -c OBJObject.cpp
 clean:
 	$(RM) *.o glfwStarterProjectBin

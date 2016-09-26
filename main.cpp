@@ -1,4 +1,8 @@
-#include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "gl-inl.h"
+#include "Window.h"
 
 void error_callback(int error, const char* description)
 {
