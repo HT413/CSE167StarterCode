@@ -101,7 +101,7 @@ int main(int argc, char** argv) {
 	glfwWindowHint(GLFW_SAMPLES, 4);
 
 	// Create the GLFW window
-	GLFWwindow* window = glfwCreateWindow(window_height, window_height, "Rastizer", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(window_height, window_height, "Rastizer", nullptr, nullptr);
 
 	// Check if the window could not be created
 	if (!window)

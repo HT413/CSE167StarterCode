@@ -1,6 +1,7 @@
 #include "Window.h"
 
 #include <string>
+#include <iostream>
 
 const std::string window_title = "GLFW Starter Project";
 Cube cube(5.0f);
@@ -21,22 +22,22 @@ GLFWwindow* Window::create_window(int width, int height)
 	// Initialize GLFW.
 	if (!glfwInit())
 	{
-		fprintf(stderr, "Failed to initialize GLFW\n");
-		return NULL;
+		std::cerr << "Failed to initialize GLFW" << std::endl;
+		return nullptr;
 	}
 
 	// 4x antialiasing
 	glfwWindowHint(GLFW_SAMPLES, 4);
 
 	// Create the GLFW window
-	GLFWwindow* window = glfwCreateWindow(width, height, window_title.c_str(), NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(width, height, window_title.c_str(), nullptr, nullptr);
 
 	// Check if the window could not be created
 	if (!window)
 	{
-		fprintf(stderr, "Failed to open GLFW window.\n");
+		std::cerr << "Failed to open GLFW window" << std::endl;
 		glfwTerminate();
-		return NULL;
+		return nullptr;
 	}
 
 	// Make the context of the window
