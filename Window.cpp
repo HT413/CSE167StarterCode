@@ -1,6 +1,8 @@
 #include "Window.h"
 
-const char* window_title = "GLFW Starter Project";
+#include <string>
+
+const std::string window_title = "GLFW Starter Project";
 Cube cube(5.0f);
 
 int Window::width;
@@ -27,7 +29,7 @@ GLFWwindow* Window::create_window(int width, int height)
 	glfwWindowHint(GLFW_SAMPLES, 4);
 
 	// Create the GLFW window
-	GLFWwindow* window = glfwCreateWindow(width, height, window_title, NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(width, height, window_title.c_str(), NULL, NULL);
 
 	// Check if the window could not be created
 	if (!window)

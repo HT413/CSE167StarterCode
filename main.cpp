@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "gl-inl.h"
 #include "Window.h"
@@ -7,7 +6,7 @@
 void error_callback(int error, const char* description)
 {
 	// Print error
-	fputs(description, stderr);
+	std::cerr << description << std::endl;
 }
 
 void setup_callbacks(GLFWwindow* window)
@@ -74,12 +73,12 @@ void setup_opengl_settings()
 void print_versions()
 {
 	// Get info of GPU and supported OpenGL version
-	printf("Renderer: %s\n", glGetString(GL_RENDERER));
-	printf("OpenGL version supported %s\n", glGetString(GL_VERSION));
+	std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
+	std::cout << "OpenGL version supported " << glGetString(GL_VERSION) << std::endl;
 
 	//If the shading language symbol is defined
 #ifdef GL_SHADING_LANGUAGE_VERSION
-	std::printf("Supported GLSL version is %s.\n", (char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
+	std::cout << "Supported GLSL version is " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 #endif
 }
 
@@ -111,5 +110,5 @@ int main(void)
 	// Terminate GLFW
 	glfwTerminate();
 
-	exit(EXIT_SUCCESS);
+	return 0;
 }
