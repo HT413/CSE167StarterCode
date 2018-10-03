@@ -1,0 +1,9 @@
+﻿  OBJObject.cpp
+  Window.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  c:\users\giovanni aguirre\documents\cse 167\cse167startercode\packages\nupengl.core.0.1.0.1\build\native\include\glfw\glfw3.h(92): note: see previous definition of 'APIENTRY'
+  main.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  c:\users\giovanni aguirre\documents\cse 167\cse167startercode\packages\nupengl.core.0.1.0.1\build\native\include\glfw\glfw3.h(92): note: see previous definition of 'APIENTRY'
+  Generating Code...
+  GLFWStarterProject.vcxproj -> C:\Users\Giovanni Aguirre\Documents\CSE 167\CSE167StarterCode\x64\Debug\GLFWStarterProject.exe
