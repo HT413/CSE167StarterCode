@@ -30,7 +30,7 @@ void Cube::draw()
 	glBegin(GL_QUADS);
 
 	// Set the color of the cube (R, G, B). Change it to your favorite color!
-	glColor3f(0.16f, 0.34f, 1.0f);
+	glColor3f(1.0f, 0.95f, 0.1f);
 
 	// Draw front face:
 	glNormal3f(0.0, 0.0, 1.0);
