@@ -1,0 +1,9 @@
+﻿  OBJObject.cpp
+c:\users\giovanni aguirre\documents\cse 167\cse167startercode\objobject.cpp(17): error C2065: 'cerr': undeclared identifier
+c:\users\giovanni aguirre\documents\cse 167\cse167startercode\objobject.cpp(17): error C2065: 'endl': undeclared identifier
+c:\users\giovanni aguirre\documents\cse 167\cse167startercode\objobject.cpp(21): error C2059: syntax error: '&&'
+c:\users\giovanni aguirre\documents\cse 167\cse167startercode\objobject.cpp(22): error C2143: syntax error: missing ';' before '{'
+c:\users\giovanni aguirre\documents\cse 167\cse167startercode\objobject.cpp(16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+c:\users\giovanni aguirre\documents\cse 167\cse167startercode\objobject.cpp(23): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1197): note: see declaration of 'fscanf'

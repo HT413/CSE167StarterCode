@@ -2,6 +2,11 @@
 
 const char* window_title = "GLFW Starter Project";
 Cube cube(5.0f);
+OBJObject object_bunny("bunny.obj");
+OBJObject object_bear("bear.obj");
+OBJObject object_dragon("dragon.obj");
+
+const char* object = "bunny";
 
 int Window::width;
 int Window::height;
@@ -71,7 +76,12 @@ void Window::resize_callback(GLFWwindow* window, int width, int height)
 void Window::idle_callback()
 {
 	// Perform any updates as necessary. Here, we will spin the cube slightly.
-	cube.update();
+	if (object == "bunny")
+		object_bunny.update();
+	else if (object == "bear")
+		object_bear.update();
+	else if (object == "dragon")
+		object_dragon.update();
 }
 
 void Window::display_callback(GLFWwindow* window)
@@ -84,7 +94,12 @@ void Window::display_callback(GLFWwindow* window)
 	glLoadIdentity();
 	
 	// Render objects
-	cube.draw();
+	if (object == "bunny")
+		object_bunny.draw();
+	else if (object == "bear")
+		object_bear.draw();
+	else if (object == "dragon")
+		object_dragon.draw();
 
 	// Gets events, including input such as keyboard and mouse or window resizing
 	glfwPollEvents();
@@ -103,5 +118,18 @@ void Window::key_callback(GLFWwindow* window, int key, int scancode, int action,
 			// Close the window. This causes the program to also terminate.
 			glfwSetWindowShouldClose(window, GL_TRUE);
 		}
+
+		if (key == GLFW_KEY_F1) {
+			object = "bunny";
+		}
+
+		if (key == GLFW_KEY_F2) {
+			object = "bear";
+		}
+
+		if (key == GLFW_KEY_F3) {
+			object = "dragon";
+		}
+
 	}
 }
